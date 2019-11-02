@@ -23,5 +23,15 @@ def argparser():
     parser.add_argument('--epochs', type=int, default=50)
     parser.add_argument('--exp_name', type=str, default='half_cheetah_sac')
 
+    # ---- Gumbel Softmax ----
+    parser.add_argument('--max_iters', type=int, default=50000)
+    parser.add_argument('--batch_size', type=int, default=100)
+    parser.add_argument('--n_classes', type=int, default=10)
+    parser.add_argument('--n_cat_dist', type=int, default=30)
+    parser.add_argument('--lr', type=float, default=0.001)
+    parser.add_argument('--anneal_rate', type=float, default=0.00003)
+    parser.add_argument('--min_temp', type=float, default=0.5)
+    parser.add_argument('--gumbel_path', type=str, default="./models/gumbel.ckpt")
+
     args = parser.parse_args()
     return args
